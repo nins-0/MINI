@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cargo",
+    "name": "Cargo Jobs",
+    "url": "https://nins-0.github.io/MINI/mini-apps/cargo/index.html",
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/location.png"
+  },
+  {
+    "id": "ships",
+    "name": "Ship arrivals",
+    "url": "https://nins-0.github.io/MINI/mini-apps/ships/index.html",
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/info.png"
+  },
+    {
+    "id": "weather",
+    "name": "Weather",
+    "url": "https://nins-0.github.io/MINI/mini-apps/weather/index.html",
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/location.png"
+  }
+]

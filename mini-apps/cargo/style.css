@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fefefe;
+}
+
+h1 {
+  color: #006600;
+}
+
+.job-card {
+  background: #f0fff0;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #cce5cc;
+}
