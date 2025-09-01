@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const regionsDiv = document.createElement("div");
       regionsDiv.style.display = "flex";
       regionsDiv.style.flexWrap = "wrap";
-      // regionsDiv.style.gap = "10px";
+      regionsDiv.style.gap = "10px";
 
       Object.entries(period.regions).forEach(([region, info]) => {
         const regionBox = document.createElement("div");
