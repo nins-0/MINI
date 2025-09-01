@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   container.appendChild(div);
 
-  // Initialize Leaflet map
   const map = L.map("map").setView([lat, lon], 13);
 
   L.tileLayer("	https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png", {

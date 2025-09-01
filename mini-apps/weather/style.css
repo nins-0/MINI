@@ -24,3 +24,8 @@ h1 {
   border-radius: 12px;
   overflow: hidden;
 }
+
+.leaflet-container img.leaflet-tile,
+.leaflet-container img.leaflet-image-layer {
+  max-width: none !important;
+}
