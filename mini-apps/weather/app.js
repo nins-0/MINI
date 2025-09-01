@@ -74,8 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       <p>🌡️ Temp: ${general.temperature.low}°C - ${general.temperature.high}°C</p>
       <p>💧 Humidity: ${general.relativeHumidity.low}% - ${general.relativeHumidity.high}%</p>
       <p>💨 Wind: ${general.wind.speed.low}-${general.wind.speed.high} km/h ${general.wind.direction}</p>
-      <hr>
-      <h4>Region-specific Forecasts:</h4>
     `;
     
     div.innerHTML = html;
