@@ -25,17 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Leaflet map
   const map = L.map("map").setView([lat, lon], 13);
 
-  // OneMap v3 Default tiles
-  L.tileLayer("https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png", {
-    subdomains: ["1", "2", "3", "4"],
+  L.tileLayer("	https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png", {
     attribution:
       '<img src="https://www.onemap.gov.sg/web-assets/images/logo/om_logo.png" style="height:20px;width:20px;"/>&nbsp;' +
       '<a href="https://www.onemap.gov.sg/" target="_blank">OneMap</a> &copy; contributors | ' +
       '<a href="https://www.sla.gov.sg/" target="_blank">Singapore Land Authority</a>'
   }).addTo(map);
 
-  // Add marker
-  L.marker([lat, lon]).addTo(map).bindPopup("Port Location").openPopup();
 });
 
 
