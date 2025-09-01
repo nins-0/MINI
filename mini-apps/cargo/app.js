@@ -5,6 +5,8 @@ const jobs = [
 
 const container = document.getElementById("job-list");
 
+loader.style.display = "block";
+
 jobs.forEach(job => {
   const div = document.createElement("div");
   div.className = "job-card";
@@ -16,3 +18,5 @@ jobs.forEach(job => {
   `;
   container.appendChild(div);
 });
+
+loader.style.display = "none";

@@ -5,6 +5,8 @@ const ships = [
 
 const container = document.getElementById("ship-list");
 
+loader.style.display = "block";
+
 ships.forEach(ship => {
   const div = document.createElement("div");
   div.className = "ship-card";
@@ -16,3 +18,5 @@ ships.forEach(ship => {
   `;
   container.appendChild(div);
 });
+
+loader.style.display = "none";
