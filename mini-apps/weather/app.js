@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     periods.forEach(period => {
       html += `
-        <p><strong>${formatTimePeriod(period.timePeriod.text)}</strong></p>
+        <p><strong>${formatTimePeriod(period.timePeriod)}</strong></p>
         <ul>
           ${Object.entries(period.regions).map(([region, info]) => `<li>${region}: ${info.text}</li>`).join("")}
         </ul>
