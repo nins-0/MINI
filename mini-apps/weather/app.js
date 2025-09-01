@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
       '<a href="https://www.sla.gov.sg/" target="_blank">Singapore Land Authority</a>'
   }).addTo(map);
 
+  setTimeout(() => map.invalidateSize(), 300);
+  
 });
 
 
