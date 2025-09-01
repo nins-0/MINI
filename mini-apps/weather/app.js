@@ -40,7 +40,7 @@ function formatTimePeriod(period) {
   const start = new Date(period.start);
   const end = new Date(period.end);
 
-  const optionsTime = { hour: "numeric", minute: undefined, hour12: true };
+  const optionsTime = { hour: "numeric", minute: undefined, hour12: true, timeZone: "Asia/Singapore" };
   const optionsDate = { day: "numeric", month: "short" };
 
   const startTime = start.toLocaleTimeString("en-US", optionsTime);
