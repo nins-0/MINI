@@ -36,6 +36,20 @@
 // });
 
 
+function formatTimePeriod(period) {
+  const start = new Date(period.start);
+  const end = new Date(period.end);
+
+  const optionsTime = { hour: "numeric", minute: undefined, hour12: true };
+  const optionsDate = { day: "numeric", month: "short" };
+
+  const startTime = start.toLocaleTimeString("en-US", optionsTime);
+  const endTime = end.toLocaleTimeString("en-US", optionsTime);
+  const endDate = end.toLocaleDateString("en-US", optionsDate);
+
+  return `${startTime} – ${endTime}, ${endDate}`;
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("weather");
 
@@ -58,23 +72,26 @@ document.addEventListener("DOMContentLoaded", async () => {
       <p>🌡️ Temp: ${general.temperature.low}°C - ${general.temperature.high}°C</p>
       <p>💧 Humidity: ${general.relativeHumidity.low}% - ${general.relativeHumidity.high}%</p>
       <p>💨 Wind: ${general.wind.speed.low}-${general.wind.speed.high} km/h ${general.wind.direction}</p>
-      <p>⏰ Valid: ${general.validPeriod.text}</p>
-      <hr>
-      <h4>Region-specific Forecasts:</h4>
     `;
 
-    // Loop through periods and show each region forecast
-    periods.forEach(period => {
-      html += `
-        <p><strong>${period.timePeriod.text}</strong></p>
-        <ul>
-          ${Object.entries(period.regions).map(([region, info]) => `<li>${region}: ${info.text}</li>`).join("")}
-        </ul>
-      `;
-    });
+    container.appendChild(mainCard);
 
-    div.innerHTML = html;
-    container.appendChild(div);
+    // Create separate cards for each period
+    periods.forEach(period => {
+      const periodCard = document.createElement("div");
+      periodCard.className = "weather-card region-card";
+      periodCard.innerHTML = `<h4>${formatTimePeriod(period.timePeriod)}</h4>`;
+
+      const regionList = document.createElement("ul");
+      Object.entries(period.regions).forEach(([region, info]) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${region}: ${info.text}`;
+        regionList.appendChild(li);
+      });
+
+      periodCard.appendChild(regionList);
+      container.appendChild(periodCard);
+    });
 
   } else {
     container.innerHTML = "<p>Unable to fetch weather data.</p>";
