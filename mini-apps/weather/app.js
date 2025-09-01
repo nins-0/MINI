@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const map = L.map("map").setView([lat, lon], 13);
 
-  L.tileLayer("	https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png", {
+  L.tileLayer("https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png", {
     attribution:
       '<img src="https://www.onemap.gov.sg/web-assets/images/logo/om_logo.png" style="height:20px;width:20px;"/>&nbsp;' +
       '<a href="https://www.onemap.gov.sg/" target="_blank">OneMap</a> &copy; contributors | ' +
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }).addTo(map);
 
   setTimeout(() => map.invalidateSize(), 300);
-  
+
 });
 
 
