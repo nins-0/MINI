@@ -61,37 +61,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     const general = record.general;
     const periods = record.periods;
 
-    // Create the main weather card
     const div = document.createElement("div");
     div.className = "weather-card";
 
-    // Build general info
     let html = `
       <h3>📍 Singapore Weather</h3>
       <p>🌤️ Weather: ${general.forecast.text}</p>
       <p>🌡️ Temp: ${general.temperature.low}°C - ${general.temperature.high}°C</p>
       <p>💧 Humidity: ${general.relativeHumidity.low}% - ${general.relativeHumidity.high}%</p>
       <p>💨 Wind: ${general.wind.speed.low}-${general.wind.speed.high} km/h ${general.wind.direction}</p>
+      <hr>
+      <h4>Region-specific Forecasts:</h4>
     `;
 
-    container.appendChild(mainCard);
-
-    // Create separate cards for each period
     periods.forEach(period => {
-      const periodCard = document.createElement("div");
-      periodCard.className = "weather-card region-card";
-      periodCard.innerHTML = `<h4>${formatTimePeriod(period.timePeriod)}</h4>`;
-
-      const regionList = document.createElement("ul");
-      Object.entries(period.regions).forEach(([region, info]) => {
-        const li = document.createElement("li");
-        li.innerHTML = `${region}: ${info.text}`;
-        regionList.appendChild(li);
-      });
-
-      periodCard.appendChild(regionList);
-      container.appendChild(periodCard);
+      html += `
+        <p><strong>${formatTimePeriod(period.timePeriod.text)}</strong></p>
+        <ul>
+          ${Object.entries(period.regions).map(([region, info]) => `<li>${region}: ${info.text}</li>`).join("")}
+        </ul>
+      `;
     });
+
+    div.innerHTML = html;
+    container.appendChild(div);
 
   } else {
     container.innerHTML = "<p>Unable to fetch weather data.</p>";
