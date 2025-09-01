@@ -77,6 +77,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       <hr>
       <h4>Region-specific Forecasts:</h4>
     `;
+    
+    div.innerHTML = html;
+    container.appendChild(div);
 
     periods.forEach(period => {
       const periodCard = document.createElement("div");
@@ -106,9 +109,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       periodCard.appendChild(regionsDiv);
       container.appendChild(periodCard);
     });
-
-    div.innerHTML = html;
-    container.appendChild(div);
 
   } else {
     container.innerHTML = "<p>Unable to fetch weather data.</p>";
