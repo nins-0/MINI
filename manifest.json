@@ -3,18 +3,18 @@
     "id": "cargo",
     "name": "Cargo Jobs",
     "url": "https://nins-0.github.io/MINI/mini-apps/cargo/index.html",
-    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/location.png"
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/cargo.png"
   },
   {
     "id": "ships",
     "name": "Ship arrivals",
     "url": "https://nins-0.github.io/MINI/mini-apps/ships/index.html",
-    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/info.png"
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/ship.png"
   },
     {
     "id": "weather",
     "name": "Weather",
     "url": "https://nins-0.github.io/MINI/mini-apps/weather/index.html",
-    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/location.png"
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/weather.png"
   }
 ]
