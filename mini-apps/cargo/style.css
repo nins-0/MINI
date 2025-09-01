@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: #fefefe;
+  background: #e7e7e7;
   font-size: 4vw;
 }
 
 h1 {
   color: #006600;
-  font-size: 5vw;
+  font-size: 6vw;
 }
 
 .job-card {
