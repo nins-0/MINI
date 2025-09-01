@@ -41,13 +41,17 @@ function formatTimePeriod(period) {
   const end = new Date(period.end);
 
   const optionsTime = { hour: "numeric", minute: undefined, hour12: true, timeZone: "Asia/Singapore" };
-  const optionsDate = { day: "numeric", month: "short" };
+  const optionsDate = { day: "numeric", month: "short" , timeZone: "Asia/Singapore"};
 
   const startTime = start.toLocaleTimeString("en-US", optionsTime);
   const endTime = end.toLocaleTimeString("en-US", optionsTime);
   const endDate = end.toLocaleDateString("en-US", optionsDate);
 
   return `${startTime} – ${endTime}, ${endDate}`;
+}
+
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -75,12 +79,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
 
     periods.forEach(period => {
-      html += `
-        <p><strong>${formatTimePeriod(period.timePeriod)}</strong></p>
-        <ul>
-          ${Object.entries(period.regions).map(([region, info]) => `<li>${region}: ${info.text}</li>`).join("")}
-        </ul>
-      `;
+      const periodCard = document.createElement("div");
+      periodCard.className = "weather-card region-card";
+
+      periodCard.innerHTML = `<h4>${formatTimePeriod(period.timePeriod)}</h4>`;
+
+      const regionsDiv = document.createElement("div");
+      regionsDiv.style.display = "flex";
+      regionsDiv.style.flexWrap = "wrap";
+      regionsDiv.style.gap = "10px";
+
+      Object.entries(period.regions).forEach(([region, info]) => {
+        const regionBox = document.createElement("div");
+        regionBox.style.flex = "1 1 100px";
+        regionBox.style.padding = "8px";
+        regionBox.style.border = "1px solid #ccc";
+        regionBox.style.borderRadius = "6px";
+        regionBox.style.textAlign = "center";
+        regionBox.innerHTML = `
+          <strong>${capitalizeFirstLetter(region)}</strong><br>
+          ${info.text}
+        `;
+        regionsDiv.appendChild(regionBox);
+      });
+
+      periodCard.appendChild(regionsDiv);
+      container.appendChild(periodCard);
     });
 
     div.innerHTML = html;
