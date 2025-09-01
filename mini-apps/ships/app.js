@@ -4,24 +4,24 @@ const ships = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-const container = document.getElementById("ship-list");
-const loader = document.getElementById("loader");
+  const container = document.getElementById("ship-list");
+  const loader = document.getElementById("loader");
 
-loader.style.display = "block";
+  loader.style.display = "block";
 
-ships.forEach(ship => {
-  const div = document.createElement("div");
-  div.className = "ship-card";
-  div.innerHTML = `
-    <h3>🚢 ${ship.name} (${ship.imo})</h3>
-    <p>Status: ${ship.status}</p>
-    <p>ETA: ${ship.eta}</p>
-    <p>Berth: ${ship.berth}</p>
-  `;
-  container.appendChild(div);
-});
+  setTimeout(() => {
+    ships.forEach(ship => {
+      const div = document.createElement("div");
+      div.className = "ship-card";
+      div.innerHTML = `
+        <h3>🚢 ${ship.name} (${ship.imo})</h3>
+        <p>Status: ${ship.status}</p>
+        <p>ETA: ${ship.eta}</p>
+        <p>Berth: ${ship.berth}</p>
+      `;
+      container.appendChild(div);
+    });
 
-loader.style.display = "none";
-
+    loader.style.display = "none";
+  }, 100); 
 });
