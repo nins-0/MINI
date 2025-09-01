@@ -21,6 +21,6 @@ const lat = 1.33;
 const lon = 103.72;
 
 const map = L.map("map").setView([lat, lon], 13);
-L.tileLayer("https://www.onemap.gov.sg/maps/tiles/Default/{z}/{x}/{y}.png", {
-  attribution: 'onemap'
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: '© OpenStreetMap'
 }).addTo(map);
