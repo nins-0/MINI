@@ -2,10 +2,12 @@ body {
   font-family: Arial, sans-serif;
   padding: 20px;
   background: #e6f7ff;
+  font-size: 4vw;
 }
 
 h1 {
   color: #005580;
+  font-size: 5vw;
 }
 
 .weather-card {
