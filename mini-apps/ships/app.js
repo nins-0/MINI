@@ -3,7 +3,10 @@ const ships = [
   { id: 2, name: "Maersk Horizon", imo: "9123456", eta: "2025-08-28 19:00", status: "Arrived", berth: "C4" }
 ];
 
+document.addEventListener("DOMContentLoaded", () => {
+  
 const container = document.getElementById("ship-list");
+const loader = document.getElementById("loader");
 
 loader.style.display = "block";
 
@@ -20,3 +23,5 @@ ships.forEach(ship => {
 });
 
 loader.style.display = "none";
+
+});

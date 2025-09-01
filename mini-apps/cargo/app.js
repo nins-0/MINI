@@ -3,7 +3,10 @@ const jobs = [
   { id: "JOB002", description: "Inspect refrigerated cargo", assignedTo: "Worker A", status: "Pending" }
 ];
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const container = document.getElementById("job-list");
+const loader = document.getElementById("loader");
 
 loader.style.display = "block";
 
@@ -20,3 +23,5 @@ jobs.forEach(job => {
 });
 
 loader.style.display = "none";
+
+});
