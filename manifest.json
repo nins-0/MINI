@@ -22,5 +22,17 @@
     "name": "Weatherrrrrr",
     "url": "https://nins-0.github.io/MINI/mini-apps/weather/index.html",
     "logo": "https://nins-0.github.io/MINI/mini-apps/assets/weather.png"
+  },
+    {
+    "id": "weather3",
+    "name": "Weatherrrrrr",
+    "url": "https://nins-0.github.io/MINI/mini-apps/weather/index.html",
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/weather.png"
+    },
+    {
+    "id": "weather4",
+    "name": "Weatherrrrrr",
+    "url": "https://nins-0.github.io/MINI/mini-apps/weather/index.html",
+    "logo": "https://nins-0.github.io/MINI/mini-apps/assets/weather.png"
   }
 ]
